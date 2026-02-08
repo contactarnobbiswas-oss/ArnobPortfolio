@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnob Biswas | Creator, Storyteller, Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-yellow: #ffd12e;
+            --bg-dark: #333133;
+            --text-white: #f5f5f5;
+            --secondary-gray: #8c8c8c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* Navigation */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(51, 49, 51, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; color: var(--primary-yellow); }
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a:hover { color: var(--primary-yellow); }
+
+        /* Hero Section */
+        header { height: 100vh; display: flex; align-items: center; padding: 0 8%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-photo.jpg') no-repeat center center/cover; }
+        .hero-content { max-width: 600px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero-content p { font-size: 1.2rem; color: var(--primary-yellow); font-weight: 600; margin-bottom: 20px; }
+        .btn { padding: 12px 30px; background: var(--primary-yellow); color: var(--bg-dark); font-weight: 700; border-radius: 5px; display: inline-block; }
+        .btn:hover { background: #faaa32; transform: scale(1.05); }
+
+        /* Sections */
+        section { padding: 100px 8%; text-align: center; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--primary-yellow); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+
+        /* Portfolio Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #444; padding: 20px; border-radius: 10px; transition: 0.3s; }
+        .card:hover { border: 1px solid var(--primary-yellow); }
+
+        /* Footer */
+        footer { padding: 50px 8%; background: #222; text-align: center; }
+        .socials { margin-bottom: 20px; }
+        .socials a { margin: 0 15px; font-size: 1.5rem; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ARNOB BISWAS</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <div class="hero-content">
+            <h1>Hey! I'm Arnob</h1>
+            <p>Creator | Storyteller | Editor</p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+    </header>
+
+    <section id="services">
+        <h2 class="section-title">My Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Video Editing</h3>
+                <p>High-end editing for YouTube, Shorts & Brands using Premiere Pro & CapCut.</p>
+            </div>
+            <div class="card">
+                <h3>Consultancy</h3>
+                <p>Helping creators to build their content strategy and visual identity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title">My Works</h2>
+        <p>Portfolio videos will be here (Embed YouTube Links)</p>
+        </section>
+
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <p>Apnar project niye kotha bolte niche form-ti fill-up korun.</p>
+        <a href="YOUR_GOOGLE_FORM_LINK" class="btn">Fill the Form</a>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p>&copy; 2026 Arnob Biswas | Hasten Media</p>
+    </footer>
+
+</body>
+</html>
