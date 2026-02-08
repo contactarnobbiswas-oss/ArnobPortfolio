@@ -3,152 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnob Biswas | Personal Brand</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Jericho Doe | Professional UI/UX Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* --- CSS Variables & Reset --- */
         :root {
-            --accent: #FFD12E; /* Signature Yellow */
-            --bg-deep: #ffffff; /* Khalid's white background style */
-            --text-dark: #111111;
-            --text-muted: #555555;
+            --accent-yellow: #d4b028; /* The mustard yellow color */
+            --bg-dark: #111111;       /* Main dark background */
+            --bg-card: #1a1a1a;       /* Slightly lighter dark for cards */
+            --text-white: #ffffff;
+            --text-grey: #888888;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll due to absolute elements */
+        }
+        h1, h2, h3, h4 { font-weight: 700; text-transform: uppercase; }
+        section { padding: 100px 10%; position: relative; }
+
+        /* --- Reusable Components --- */
+        .section-heading {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 2;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-yellow);
+            margin-top: 15px;
+        }
+        /* Big Background Letters (A, M, R, C) */
+        .bg-letter {
+            position: absolute;
+            font-size: 15rem;
+            font-weight: 900;
+            color: #1a1a1a; /* Very subtle dark grey */
+            z-index: 1;
+            opacity: 0.5;
+            line-height: 1;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-deep); color: var(--text-dark); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: none; }
+        /* --- Header Top Bar --- */
+        .top-bar {
+            background: var(--accent-yellow);
+            color: var(--bg-dark);
+            text-align: center;
+            padding: 20px 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .top-bar span { color: var(--text-white); }
 
-        /* Navigation - Khalid Farhan Style */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 10%; position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 1px solid #eee; }
-        .logo { font-size: 22px; font-weight: 800; color: var(--text-dark); text-decoration: none; }
-        .nav-links { list-style: none; display: flex; gap: 30px; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 15px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        /* --- About Me Section --- */
+        .about-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-left {
+            flex: 1;
+            position: relative;
+        }
+        /* Placeholder for the big portrait image */
+        .about-image {
+            width: 100%;
+            height: 600px; /* Fixed height for the look */
+            background-color: #333; /* Placeholder color */
+            background-image: url('https://via.placeholder.com/600x800/333333/888888?text=Image+Here');
+            background-size: cover;
+            background-position: center;
+        }
+        .name-card {
+            position: absolute;
+            bottom: 30px;
+            right: -30px;
+            background: var(--accent-yellow);
+            color: var(--bg-dark);
+            padding: 25px 40px;
+            text-align: right;
+        }
+        .name-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        .name-card p { font-size: 0.9rem; font-style: italic; }
 
-        /* Hero Section - The "Digital Marketing" Vibe */
-        .hero { padding: 100px 10% 80px; text-align: left; display: flex; align-items: center; gap: 50px; }
-        .hero-content { flex: 1.2; }
-        .hero-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; color: #000; }
-        .hero-content p { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 35px; font-weight: 400; }
-        
-        .hero-img { flex: 0.8; }
-        .hero-img img { width: 100%; border-radius: 10px; box-shadow: 20px 20px 0px var(--accent); }
+        .about-right {
+            flex: 1;
+            position: relative;
+        }
+        .about-right .bg-letter { top: -80px; left: 0; }
+        .about-text {
+            color: var(--text-grey);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 2;
+        }
+        .about-text p { margin-bottom: 20px; }
+        .btn-yellow {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--accent-yellow);
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 30px;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+        .btn-yellow:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(212, 176, 40, 0.3); }
+        .about-socials a {
+            color: var(--text-grey);
+            margin-right: 20px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .about-socials a:hover { color: var(--accent-yellow); }
 
-        /* Featured In Bar */
-        .featured-bar { background: #f9f9f9; padding: 40px 10%; text-align: center; }
-        .featured-bar p { font-weight: 600; color: #888; text-transform: uppercase; margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; }
-        .logo-grid { display: flex; justify-content: space-between; align-items: center; opacity: 0.5; filter: grayscale(100%); }
-        .logo-grid span { font-size: 1.2rem; font-weight: 700; }
+        /* --- My Skills Section --- */
+        #skills .bg-letter { top: 20px; left: 10%; }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            z-index: 2;
+        }
+        /* Simulating progress circles with CSS gradients */
+        .skill-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-yellow) 0deg, var(--accent-yellow) 342deg, #333 342deg, #333 360deg); /* 95% example */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            position: relative;
+        }
+        /* Inner circle to make it a ring */
+        .skill-circle::before {
+            content: '';
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: var(--bg-dark);
+            border-radius: 50%;
+        }
+        .skill-percentage {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            z-index: 1;
+        }
+        .skill-name { font-weight: 700; letter-spacing: 1px; }
+        /* Specific Percentages */
+        .p95 { background: conic-gradient(var(--accent-yellow) 95%, #333 0); }
+        .p80 { background: conic-gradient(var(--accent-yellow) 80%, #333 0); }
+        .p75 { background: conic-gradient(var(--accent-yellow) 75%, #333 0); }
+        .p60 { background: conic-gradient(var(--accent-yellow) 60%, #333 0); }
 
-        /* Partner/Service Section */
-        .partner-section { padding: 100px 10%; background: #fff; }
-        .partner-section h2 { font-size: 2.5rem; margin-bottom: 25px; }
-        .partner-section p { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 50px; }
 
-        /* Video/Portfolio Grid - 2x2 for Long Videos */
-        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .video-card { background: #000; aspect-ratio: 16/9; border-radius: 8px; position: relative; overflow: hidden; }
-        .video-card iframe { width: 100%; height: 100%; border: none; }
+        /* --- Reference Section --- */
+        #reference .bg-letter { top: 20px; left: 10%; }
+        .reference-header { text-align: left; margin-bottom: 80px; }
+        .reference-subtitle { color: var(--text-grey); margin-top: -40px; margin-bottom: 60px; display: block; position: relative; z-index: 2;}
 
-        /* Expertise Section (3x2 Grid) */
-        .expertise { padding: 80px 10%; background: #000; color: #fff; }
-        .expertise h2 { color: var(--accent); margin-bottom: 50px; }
-        .exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .exp-item { border: 1px solid #333; padding: 40px 20px; text-align: center; border-radius: 5px; }
-        .exp-item:hover { border-color: var(--accent); }
+        .testimonial-card {
+            background: var(--text-white);
+            color: var(--bg-dark);
+            padding: 60px 80px;
+            text-align: center;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+        .tester-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid var(--text-white);
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('https://via.placeholder.com/100x100?text=User'); /* Placeholder */
+            background-size: cover;
+        }
+        .check-icon {
+            color: var(--accent-yellow);
+            font-size: 2rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .tester-name { font-weight: 700; }
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--bg-dark);
+            background: #eee;
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .arrow-left { left: 20px; }
+        .arrow-right { right: 20px; }
 
-        /* Contact Section */
-        .contact { padding: 100px 10%; text-align: center; }
-        .contact-form { max-width: 600px; margin: 0 auto; text-align: left; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px; }
-        .btn { background: #000; color: #fff; padding: 15px 45px; border: none; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Footer */
-        footer { padding: 60px 10%; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-        .footer-socials a { color: #000; font-size: 1.5rem; margin-left: 20px; }
+        /* --- Contact Me Section --- */
+        #contact .bg-letter { top: 20px; left: 10%; }
+        .contact-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 80px;
+            position: relative; z-index: 2;
+        }
+        .contact-person-img {
+             width: 120px; height: 120px;
+             border-radius: 50%;
+             background-image: url('https://via.placeholder.com/120x120?text=Me'); /* Placeholder */
+             background-size: cover;
+        }
+        .contact-info-items {
+            display: flex;
+            gap: 50px;
+        }
+        .info-item i { color: var(--accent-yellow); margin-right: 15px; }
+        .info-item span { display: block; font-weight: 700; margin-bottom: 5px; }
+        .info-item p { color: var(--text-grey); font-size: 0.9rem; }
+        .contact-socials a { color: var(--text-white); margin-left: 20px; font-size: 1.2rem; }
 
-        @media (max-width: 768px) {
-            .hero, .portfolio-grid, .exp-grid { grid-template-columns: 1fr; display: block; }
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-img { margin-top: 40px; }
-            nav { padding: 20px 5%; }
-            .nav-links { display: none; }
+        .contact-bottom {
+            display: flex;
+            height: 450px;
+            position: relative; z-index: 2;
+        }
+        .map-container {
+            flex: 1;
+            background-image: url('https://via.placeholder.com/600x450/444444/888888?text=Map+Placeholder'); /* Placeholder for map image */
+            background-size: cover;
+            background-position: center;
+        }
+        .form-container {
+            flex: 1;
+            background: var(--text-white);
+            padding: 40px;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            background: #f9f9f9;
+            font-family: inherit;
+        }
+        .btn-form {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent-yellow);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #0a0a0a;
+            padding: 30px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-grey);
+            font-size: 0.9rem;
+        }
+        .footer-socials a { color: var(--text-grey); margin-left: 20px; transition: 0.3s;}
+        .footer-socials a:hover { color: var(--accent-yellow); }
+
+        /* --- Responsive Tweak (Basic) --- */
+        @media (max-width: 1024px) {
+            .about-container, .skills-grid, .contact-top, .contact-bottom {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            .about-image { height: 400px; }
+            .name-card { right: 0; bottom: -20px; }
+            .contact-info-items { flex-direction: column; gap: 30px; margin-top: 30px; }
+            .map-container { height: 300px; }
+            section { padding: 80px 5%; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo">Arnob Biswas</a>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Video editing that converts.</h1>
-            <p>Want more retention in your content? You should work with someone who knows the ins and outs of storytelling. That's me.</p>
-            <a href="#contact" class="btn">Work With Me</a>
-        </div>
-        <div class="hero-img">
-            <img src="your-photo.jpg" alt="Arnob Biswas">
-        </div>
-    </section>
-
-    <div class="featured-bar">
-        <p>Featured In</p>
-        <div class="logo-grid">
-            <span>Daily Star</span> <span>Jamuna TV</span> <span>Prothom Alo</span> <span>The Business Standard</span>
-        </div>
+    <div class="top-bar">
+        ABOUT ME <span>/ HOME</span>
     </div>
 
-    <section class="partner-section" id="services">
-        <h2>Your true 360 storytelling partner</h2>
-        <p>Marketing has changed a lot in the last decade. Content is bigger than ever before. Whether you are a brand or a creator, I help you scale with high-impact video strategy.</p>
+    <section id="about">
+        <div class="about-container">
+            <div class="about-left">
+                <div class="about-image"></div>
+                <div class="name-card">
+                    <h3>NAME: JERICHO DOE</h3>
+                    <p>Professional UI/UX Designer</p>
+                </div>
+            </div>
+            <div class="about-right">
+                <span class="bg-letter">A</span>
+                <h2 class="section-heading">ABOUT ME</h2>
+                <div class="about-text">
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <a href="#" class="btn-yellow"><i class="fas fa-download" style="margin-right: 10px;"></i> Download CV</a>
+                    <div class="about-socials">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <span class="bg-letter">M</span>
+        <h2 class="section-heading">MY SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-circle p95">
+                    <span class="skill-percentage">95%</span>
+                </div>
+                <h4 class="skill-name">HTML & CSS</h4>
+            </div>
+            <div class="skill-item">
+                <div class="skill-circle p80">
+                    <span class="skill-percentage">80%</span>
+                </div>
+                <h4 class="skill-name">BOOTSTRAP</h4>
+            </div>
+            <div class="skill-item">
+                <div class="skill-circle p75">
+                    <span class="skill-percentage">75%</span>
+                </div>
+                <h4 class="skill-name">JAVASCRIPT</h4>
+            </div>
+            <div class="skill-item">
+                <div class="skill-circle p60">
+                    <span class="skill-percentage">60%</span>
+                </div>
+                <h4 class="skill-name">PHOTOSHOP</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="reference">
+        <span class="bg-letter">R</span>
+        <div class="reference-header">
+            <h2 class="section-heading">REFERENCE</h2>
+        </div>
+        <span class="reference-subtitle">It is a long established fact that a reader will be distracted by the readable content of a page</span>
         
-        <div class="exp-grid" style="color: #000;">
-            <div class="exp-item"><h3>Video Editing</h3></div>
-            <div class="exp-item"><h3>Storytelling</h3></div>
-            <div class="exp-item"><h3>Strategy</h3></div>
-            <div class="exp-item"><h3>Scripting</h3></div>
-            <div class="exp-item"><h3>Thumbnails</h3></div>
-            <div class="exp-item"><h3>Consulting</h3></div>
+        <div class="testimonial-card">
+            <div class="tester-img"></div>
+            <i class="fas fa-check-circle check-icon"></i>
+            <p class="testimonial-text">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."</p>
+            <h4 class="tester-name">John Doe</h4>
+            <div class="nav-arrow arrow-left"><i class="fas fa-chevron-left"></i></div>
+            <div class="nav-arrow arrow-right"><i class="fas fa-chevron-right"></i></div>
         </div>
     </section>
 
-    <section id="portfolio" style="padding: 100px 10%;">
-        <h2 style="margin-bottom: 40px;">Selected Portfolio Projects</h2>
-        <div class="portfolio-grid">
-            <div class="video-card">Video 1</div>
-            <div class="video-card">Video 2</div>
-            <div class="video-card">Video 3</div>
-            <div class="video-card">Video 4</div>
+    <section id="contact">
+        <span class="bg-letter">C</span>
+        <h2 class="section-heading" style="margin-bottom: 80px;">CONTACT ME</h2>
+        
+        <div class="contact-top">
+            <div class="contact-person-img"></div>
+            <div class="contact-info-items">
+                <div class="info-item">
+                    <span><i class="fas fa-phone-alt"></i> PHONE</span>
+                    <p>+1 234 5678 901<br>+1 987 6543 210</p>
+                </div>
+                <div class="info-item">
+                    <span><i class="fas fa-envelope"></i> E-MAIL</span>
+                    <p>yourmail@gmail.com<br>company@gmail.com</p>
+                </div>
+                <div class="info-item">
+                    <span><i class="fas fa-desktop"></i> WEBSITE</span>
+                    <p>www.yourwebsite.com</p>
+                </div>
+            </div>
+            <div class="contact-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            </div>
         </div>
-    </section>
 
-    <section class="contact" id="contact">
-        <div class="contact-form">
-            <h2 style="margin-bottom: 30px;">Get a Custom Quote</h2>
-            <form>
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea rows="5" placeholder="Tell me about your project"></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+        <div class="contact-bottom">
+            <div class="map-container"></div>
+            <div class="form-container">
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <textarea rows="5" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn-form">SEND</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Arnob Biswas. All Rights Reserved.</p>
+        <p>© 2019 themewone. All rights reserved</p>
         <div class="footer-socials">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-google-plus-g"></i></a>
         </div>
     </footer>
 
