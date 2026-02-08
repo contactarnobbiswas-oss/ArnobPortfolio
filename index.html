@@ -3,111 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnob Biswas | Creator, Storyteller, Editor</title>
+    <title>Arnob Biswas | Personal Brand</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-yellow: #ffd12e;
-            --bg-dark: #333133;
-            --text-white: #f5f5f5;
-            --secondary-gray: #8c8c8c;
-        }
-
+        :root { --yellow: #ffd12e; --dark: #333133; --light: #f4f7f6; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-dark); color: var(--text-white); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+        
         /* Navigation */
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(51, 49, 51, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; color: var(--primary-yellow); }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li { margin-left: 30px; }
-        .nav-links a:hover { color: var(--primary-yellow); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: var(--light); }
+        .logo img { height: 50px; }
+        .nav-links { list-style: none; display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; }
 
-        /* Hero Section */
-        header { height: 100vh; display: flex; align-items: center; padding: 0 8%; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('your-photo.jpg') no-repeat center center/cover; }
-        .hero-content { max-width: 600px; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero-content p { font-size: 1.2rem; color: var(--primary-yellow); font-weight: 600; margin-bottom: 20px; }
-        .btn { padding: 12px 30px; background: var(--primary-yellow); color: var(--bg-dark); font-weight: 700; border-radius: 5px; display: inline-block; }
-        .btn:hover { background: #faaa32; transform: scale(1.05); }
+        /* Hero Section - Based on Untitled-3.jpg */
+        .hero { display: flex; align-items: center; justify-content: space-between; padding: 50px 8%; background-color: var(--yellow); min-height: 80vh; }
+        .hero-text { flex: 1; }
+        .hero-text h2 { font-size: 2rem; }
+        .hero-text h1 { font-size: 4rem; font-family: 'Montserrat'; margin: 10px 0; }
+        .hero-text .typewriter { font-size: 1.8rem; font-weight: 600; color: var(--dark); }
+        
+        .hero-img { flex: 1; display: flex; justify-content: flex-end; }
+        .hero-img img { width: 400px; height: 400px; border-radius: 50%; object-fit: cover; border: 10px solid white; }
 
-        /* Sections */
-        section { padding: 100px 8%; text-align: center; }
-        .section-title { font-size: 2.5rem; margin-bottom: 50px; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--primary-yellow); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        /* Sections Overall */
+        section { padding: 80px 8%; text-align: center; }
+        h2.section-title { font-size: 2.5rem; margin-bottom: 40px; font-family: 'Montserrat'; }
 
-        /* Portfolio Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: #444; padding: 20px; border-radius: 10px; transition: 0.3s; }
-        .card:hover { border: 1px solid var(--primary-yellow); }
+        /* Expertise Grid */
+        .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .exp-card { background: white; padding: 30px; border-radius: 15px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .exp-card:hover { transform: translateY(-10px); background: var(--yellow); }
+
+        /* Services */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: var(--dark); color: white; padding: 40px; border-radius: 20px; text-align: left; }
+        .service-card h3 { color: var(--yellow); margin-bottom: 15px; }
+
+        /* Portfolio */
+        .portfolio-section h3 { margin: 40px 0 20px; text-align: left; }
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .shorts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .video-placeholder { background: #ddd; height: 200px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+        .shorts-placeholder { background: #ddd; height: 320px; border-radius: 10px; }
+
+        /* Contact Form */
+        form { max-width: 600px; margin: 0 auto; text-align: left; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; font-family: inherit; }
+        .btn { background: var(--dark); color: white; padding: 15px 40px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; }
 
         /* Footer */
-        footer { padding: 50px 8%; background: #222; text-align: center; }
-        .socials { margin-bottom: 20px; }
-        .socials a { margin: 0 15px; font-size: 1.5rem; }
+        footer { background: var(--dark); color: white; padding: 40px; text-align: center; }
+        .social-icons { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-icons a { color: var(--yellow); font-size: 1.5rem; text-decoration: none; }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-content h1 { font-size: 2.5rem; }
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-img img { width: 250px; height: 250px; margin-bottom: 30px; }
+            .hero-text h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">ARNOB BISWAS</div>
-        <ul class="nav-links">
+        <div class="logo"><img src="Untitled-3.jpg" alt="Logo"></div> <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header id="home">
-        <div class="hero-content">
-            <h1>Hey! I'm Arnob</h1>
-            <p>Creator | Storyteller | Editor</p>
-            <a href="#contact" class="btn">Hire Me</a>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Hey! I'm</h2>
+            <h1>Arnob Biswas</h1>
+            <p>A Passionate <span class="typewriter" id="typewriter"></span></p>
+            <br>
+            <button class="btn" onclick="location.href='#contact'">Contact Me</button>
         </div>
-    </header>
+        <div class="hero-img">
+            <img src="your-photo.jpg" alt="Arnob Biswas">
+        </div>
+    </section>
+
+    <section id="expertise">
+        <h2 class="section-title">My Expertise</h2>
+        <div class="expertise-grid">
+            <div class="exp-card">Video Editing</div>
+            <div class="exp-card">Storytelling</div>
+            <div class="exp-card">Content Creation</div>
+            <div class="exp-card">Scripting</div>
+            <div class="exp-card">Strategy Setup</div>
+            <div class="exp-card">Thumbnails</div>
+        </div>
+    </section>
 
     <section id="services">
         <h2 class="section-title">My Services</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Video Editing</h3>
-                <p>High-end editing for YouTube, Shorts & Brands using Premiere Pro & CapCut.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Video Editing & Visual Storytelling</h3>
+                <p>High-end post-production that keeps your audience hooked from start to finish.</p>
             </div>
-            <div class="card">
-                <h3>Consultancy</h3>
-                <p>Helping creators to build their content strategy and visual identity.</p>
+            <div class="service-card">
+                <h3>Content Strategy & Consulting</h3>
+                <p>Planning your content roadmap to ensure growth and brand authority.</p>
+            </div>
+            <div class="service-card">
+                <h3>Brand Collaborations</h3>
+                <p>Helping you connect with the right brands and manage sponsorships effectively.</p>
             </div>
         </div>
     </section>
 
-    <section id="portfolio">
-        <h2 class="section-title">My Works</h2>
-        <p>Portfolio videos will be here (Embed YouTube Links)</p>
-        </section>
+    <section id="portfolio" class="portfolio-section">
+        <h2 class="section-title">My Portfolio</h2>
+        <h3>Long Form Videos</h3>
+        <div class="video-grid">
+            <div class="video-placeholder">Long Video 1</div>
+            <div class="video-placeholder">Long Video 2</div>
+            <div class="video-placeholder">Long Video 3</div>
+        </div>
+        <h3>Shorts & Reels</h3>
+        <div class="shorts-grid">
+            <div class="shorts-placeholder"></div>
+            <div class="shorts-placeholder"></div>
+            <div class="shorts-placeholder"></div>
+            <div class="shorts-placeholder"></div>
+        </div>
+    </section>
 
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
-        <p>Apnar project niye kotha bolte niche form-ti fill-up korun.</p>
-        <a href="YOUR_GOOGLE_FORM_LINK" class="btn">Fill the Form</a>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
     </section>
 
     <footer>
-        <div class="socials">
-            <a href="#">Facebook</a>
-            <a href="#">YouTube</a>
-            <a href="#">WhatsApp</a>
+        <div class="social-icons">
+            <a href="#">FB</a> <a href="#">IG</a> <a href="#">YT</a> <a href="#">LN</a>
         </div>
-        <p>&copy; 2026 Arnob Biswas | Hasten Media</p>
+        <p>&copy; 2026 Arnob Biswas | All Rights Reserved</p>
     </footer>
 
+    <script>
+        const words = ["Creator", "Storyteller", "Editor"];
+        let i = 0, j = 0, currentWord = "", isDeleting = false;
+        function type() {
+            currentWord = words[i];
+            if (isDeleting) {
+                document.getElementById("typewriter").textContent = currentWord.substring(0, j - 1);
+                j--;
+                if (j == 0) { isDeleting = false; i = (i + 1) % words.length; }
+            } else {
+                document.getElementById("typewriter").textContent = currentWord.substring(0, j + 1);
+                j++;
+                if (j == currentWord.length) isDeleting = true;
+            }
+            setTimeout(type, isDeleting ? 100 : 200);
+        }
+        type();
+    </script>
 </body>
 </html>
