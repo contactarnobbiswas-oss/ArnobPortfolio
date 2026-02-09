@@ -7,27 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ১. কাস্টম ফন্ট সেটআপ - ফাইলটি index.html এর পাশেই রাখুন */
-        @font-face {
-            font-family: 'Janelotus';
-            src: url('Janelotus.ttf') format('truetype'); 
-            font-weight: normal;
-            font-style: normal;
-        }
-
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        /* আপনার অরিজিনাল Poppins ফন্ট সব কিছুর জন্য */
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
+        /* পুরো সাইটের জন্য Poppins ফিক্স করা হলো */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            scroll-behavior: smooth; 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+            overflow-x: hidden; 
+        }
         
-        /* ২. শুধুমাত্র লোগোর জন্য সিগনেচার স্টাইল (বাকি সব Poppins থাকবে) */
-        .signature-logo {
-            font-family: 'Janelotus', cursive !important;
-            font-size: 2.2rem; 
-            color: #3b82f6; /* Blue-500 */
-            line-height: 1;
-            font-style: normal !important;
-            text-transform: none !important;
+        /* লোগো সাইজ কন্ট্রোল করার জন্য */
+        .nav-logo {
+            height: 40px; /* লোগো বড় বা ছোট করতে এই ভ্যালু পরিবর্তন করুন */
+            width: auto;
+        }
+        .footer-logo {
+            height: 50px; /* ফুটারের লোগোর সাইজ */
+            width: auto;
         }
 
         /* Typewriter Cursor */
@@ -49,10 +47,11 @@
 <body>
 
     <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 py-3 flex justify-between items-center">
-            <div class="signature-logo">
-                Arnob Biswas
-            </div>
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-between items-center">
+            <a href="#home">
+                <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
+            </a>
+            
             <div class="hidden md:flex space-x-10 font-medium text-sm lg:text-base">
                 <a href="#home" class="hover:text-blue-400 transition">Home</a>
                 <a href="#services" class="hover:text-blue-400 transition">Services</a>
@@ -158,29 +157,7 @@
                     <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Social Media</p>
                     <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Scaling Content 2026</h3>
                 </div>
-
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-6xl text-white"></i>
-                        </div>
-                    </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Commercial</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Brand Identity Tech</h3>
                 </div>
-
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-6xl text-white"></i>
-                        </div>
-                    </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Personal Brand</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Creator Economy Insights</h3>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -216,16 +193,17 @@
 
     <footer class="py-16 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
-            <div class="signature-logo mb-8">Arnob Biswas</div>
-            <div class="flex justify-center space-x-8 mb-10 text-gray-400">
-                <a href="#" class="hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-blue-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+            <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8">
+            
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="#" class="text-gray-400 hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="hover:text-red-500 text-2xl transition"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p class="text-gray-500 text-sm text-center font-medium">
-                &copy; 2026 Arnob Biswas. All rights reserved.
+            <p class="text-gray-500 text-sm text-center">
+                &copy; 2026 Arnob Biswas. Built with passion from Magura.
             </p>
         </div>
     </footer>
@@ -237,11 +215,16 @@
             if (count === words.length) count = 0;
             currentText = words[count];
             letter = currentText.slice(0, ++index);
-            const el = document.getElementById("typewriter");
-            if(el) {
-                el.textContent = letter;
-                if (letter.length === currentText.length) { count++; index = 0; setTimeout(type, 2000); }
-                else setTimeout(type, 150);
+            const element = document.getElementById("typewriter");
+            if(element) {
+                element.textContent = letter;
+                if (letter.length === currentText.length) {
+                    count++;
+                    index = 0;
+                    setTimeout(type, 2000); 
+                } else {
+                    setTimeout(type, 150); 
+                }
             }
         }());
     </script>
