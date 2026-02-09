@@ -9,23 +9,30 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        /* পুরো সাইটের জন্য Poppins ফিক্স করা হলো */
+        /* পুরো সাইটের জন্য Poppins ফিক্স করা হলো এবং ইটালিক সমস্যা চিরতরে বন্ধ */
         body { 
-            font-family: 'Poppins', sans-serif; 
+            font-family: 'Poppins', sans-serif !important; 
+            font-style: normal !important;
             scroll-behavior: smooth; 
             background-color: #0f172a; 
             color: #f8fafc; 
             overflow-x: hidden; 
         }
+
+        * {
+            font-style: normal !important;
+        }
         
-        /* লোগো সাইজ কন্ট্রোল করার জন্য */
+        /* লোগো সাইজ কন্ট্রোল - আপনার চাহিদা অনুযায়ী কিছুটা বড় রাখা হয়েছে */
         .nav-logo {
-            height: 40px; /* লোগো বড় বা ছোট করতে এই ভ্যালু পরিবর্তন করুন */
+            height: 48px; /* লোগোর উচ্চতা সামান্য বাড়ানো হয়েছে */
             width: auto;
+            display: block;
         }
         .footer-logo {
-            height: 50px; /* ফুটারের লোগোর সাইজ */
+            height: 64px; /* ফুটারের লোগো */
             width: auto;
+            display: block;
         }
 
         /* Typewriter Cursor */
@@ -48,8 +55,8 @@
 
     <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-between items-center">
-            <a href="#home">
-                <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
+            <a href="#home" class="flex items-center">
+                <img src="logo.png" alt="Logo" class="nav-logo">
             </a>
             
             <div class="hidden md:flex space-x-10 font-medium text-sm lg:text-base">
@@ -78,7 +85,7 @@
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                     <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-2 border-blue-500/20 overflow-hidden shadow-2xl">
-                        <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover">
+                        <img src="photo.jpg" alt="Arnob Biswas" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -108,101 +115,38 @@
                         <i class="fas fa-film text-2xl text-blue-500"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Video Editing & Visual Storytelling</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Cinematic sequences and emotional narratives tailored for high-impact viewing experiences.</p>
+                    <p class="text-gray-400 leading-relaxed text-sm font-normal">Cinematic sequences and emotional narratives tailored for high-impact viewing experiences.</p>
                 </div>
                 <div class="p-10 glass-card rounded-[2.5rem] text-left">
                     <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
                         <i class="fas fa-lightbulb text-2xl text-blue-500"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Content Strategy & Consulting</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Strategic planning to scale your personal brand and optimize channel performance.</p>
+                    <p class="text-gray-400 leading-relaxed text-sm font-normal">Strategic planning to scale your personal brand and optimize channel performance.</p>
                 </div>
                 <div class="p-10 glass-card rounded-[2.5rem] text-left">
                     <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
                         <i class="fas fa-handshake text-2xl text-blue-500"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Brand Collabs & Sponsorships</h3>
-                    <p class="text-gray-400 leading-relaxed text-sm">Bridging the gap between creators and brands for authentic partnerships.</p>
+                    <p class="text-gray-400 leading-relaxed text-sm font-normal">Bridging the gap between creators and brands for authentic partnerships.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-24 bg-slate-900/30">
-        <div class="max-w-7xl mx-auto px-8 md:px-16">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2">Recent Projects</h2>
-                <p class="text-gray-400">A collection of my recent work.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-6xl text-white"></i>
-                        </div>
-                    </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Documentary</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">The Art of Storytelling</h3>
-                </div>
-                
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-6xl text-white"></i>
-                        </div>
-                    </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Social Media</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Scaling Content 2026</h3>
-                </div>
-                </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24">
-        <div class="max-w-3xl mx-auto px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-                <p class="text-gray-400">Have a project in mind? Reach out and let's create something amazing together.</p>
-            </div>
-            <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-gray-400 ml-1">Full Name</label>
-                        <input type="text" placeholder="John Doe" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-sm font-medium text-gray-400 ml-1">Email Address</label>
-                        <input type="email" placeholder="john@example.com" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
-                    </div>
-                </div>
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-gray-400 ml-1">Subject</label>
-                    <input type="text" placeholder="Project Inquiry" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-sm font-medium text-gray-400 ml-1">Message</label>
-                    <textarea rows="5" placeholder="Tell me about your project..." class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition"></textarea>
-                </div>
-                <button class="w-full py-5 bg-blue-600 hover:bg-blue-700 rounded-2xl font-bold text-lg transition shadow-xl shadow-blue-500/10">Send Message</button>
-            </form>
         </div>
     </section>
 
     <footer class="py-16 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
-            <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8">
+            <img src="logo.png" alt="Logo" class="footer-logo mb-8">
             
-            <div class="flex justify-center space-x-8 mb-10">
-                <a href="#" class="text-gray-400 hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-gray-400 hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+            <div class="flex justify-center space-x-8 mb-10 text-gray-400">
+                <a href="#" class="hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="hover:text-red-500 text-2xl transition"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="text-gray-400 hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p class="text-gray-500 text-sm text-center">
+            <p class="text-gray-500 text-sm text-center font-medium">
                 &copy; 2026 Arnob Biswas. Built with passion from Magura.
             </p>
         </div>
@@ -215,16 +159,11 @@
             if (count === words.length) count = 0;
             currentText = words[count];
             letter = currentText.slice(0, ++index);
-            const element = document.getElementById("typewriter");
-            if(element) {
-                element.textContent = letter;
-                if (letter.length === currentText.length) {
-                    count++;
-                    index = 0;
-                    setTimeout(type, 2000); 
-                } else {
-                    setTimeout(type, 150); 
-                }
+            const el = document.getElementById("typewriter");
+            if(el) {
+                el.textContent = letter;
+                if (letter.length === currentText.length) { count++; index = 0; setTimeout(type, 2000); }
+                else setTimeout(type, 150);
             }
         }());
     </script>
