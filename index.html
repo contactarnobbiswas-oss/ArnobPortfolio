@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f8fafc; }
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
         
         /* Typewriter Cursor */
         .typewriter::after {
@@ -29,11 +29,11 @@
 <body>
 
     <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold tracking-tighter text-blue-500">
                 A.B.
             </div>
-            <div class="hidden md:flex space-x-8 font-medium">
+            <div class="hidden md:flex space-x-10 font-medium text-sm lg:text-base">
                 <a href="#home" class="hover:text-blue-400 transition">Home</a>
                 <a href="#services" class="hover:text-blue-400 transition">Services</a>
                 <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
@@ -42,121 +42,176 @@
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center">
-            <div class="md:w-2/3 mt-10 md:mt-0 text-center md:text-left">
+    <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col-reverse md:flex-row items-center w-full">
+            <div class="md:w-3/5 mt-12 md:mt-0 text-center md:text-left">
                 <h3 class="text-xl md:text-2xl text-blue-400 font-light mb-2">Hey! I'm</h3>
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">Arnob Biswas</h1>
-                <p class="text-2xl md:text-3xl text-gray-400 font-light">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight">Arnob Biswas</h1>
+                <p class="text-2xl md:text-3xl text-gray-400 font-light min-h-[40px]">
                     A passionate <span id="typewriter" class="text-blue-500 font-semibold typewriter"></span>
                 </p>
-                <button class="mt-8 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full font-semibold transition shadow-lg shadow-blue-500/20">Let's Work Together</button>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <button class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full font-bold transition shadow-lg shadow-blue-500/20">Let's Work Together</button>
+                    <button class="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-full font-bold transition">View Portfolio</button>
+                </div>
             </div>
-            <div class="md:w-1/3 flex justify-center">
-                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-blue-500/30 overflow-hidden shadow-2xl shadow-blue-500/10">
-                    <img src="https://via.placeholder.com/400" alt="Arnob Biswas" class="w-full h-full object-cover">
+            <div class="md:w-2/5 flex justify-center md:justify-end">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-2 border-blue-500/20 overflow-hidden shadow-2xl">
+                        <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">My Expertise</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                <div class="p-6 glass-card rounded-2xl">Video Editing</div>
-                <div class="p-6 glass-card rounded-2xl">Storytelling</div>
-                <div class="p-6 glass-card rounded-2xl">Content Creation</div>
-                <div class="p-6 glass-card rounded-2xl">Strategy Setup</div>
-                <div class="p-6 glass-card rounded-2xl">Scripting</div>
-                <div class="p-6 glass-card rounded-2xl">Thumbnail Design</div>
+    <section class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Expertise</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Video Editing</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Storytelling</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Content Creation</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Strategy Setup</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Scripting</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Thumbnail Design</div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-12 text-blue-400">My Services</h2>
+    <section id="services" class="py-24">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 text-center">
+            <p class="text-blue-500 font-bold tracking-widest uppercase text-sm mb-4">What I Offer</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-16">My Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 glass-card rounded-3xl">
-                    <i class="fas fa-film text-3xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3">Video Editing & Visual Storytelling</h3>
-                    <p class="text-gray-400 text-sm">Cinematic sequences and emotional narratives tailored for high-impact viewing experiences.</p>
+                <div class="p-10 glass-card rounded-[2.5rem] text-left">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-film text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Video Editing & Visual Storytelling</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Cinematic sequences and emotional narratives tailored for high-impact viewing experiences.</p>
                 </div>
-                <div class="p-8 glass-card rounded-3xl">
-                    <i class="fas fa-lightbulb text-3xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3">Content Strategy & Consulting</h3>
-                    <p class="text-gray-400 text-sm">Strategic planning to scale your personal brand and optimize channel performance.</p>
+                <div class="p-10 glass-card rounded-[2.5rem] text-left">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-lightbulb text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Content Strategy & Consulting</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Strategic planning to scale your personal brand and optimize channel performance.</p>
                 </div>
-                <div class="p-8 glass-card rounded-3xl">
-                    <i class="fas fa-handshake text-3xl text-blue-500 mb-4"></i>
-                    <h3 class="text-xl font-bold mb-3">Brand Collaborations & Sponsorships</h3>
-                    <p class="text-gray-400 text-sm">Bridging the gap between creators and brands for authentic and profitable partnerships.</p>
+                <div class="p-10 glass-card rounded-[2.5rem] text-left">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake text-2xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Brand Collabs & Sponsorships</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Bridging the gap between creators and brands for authentic partnerships.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-20 bg-slate-900/50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-12">Recent Projects</h2>
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="group">
-                    <div class="aspect-video bg-gray-800 rounded-2xl overflow-hidden glass-card mb-4">
-                        <img src="https://via.placeholder.com/640x360" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <h4 class="text-blue-400 text-sm font-semibold uppercase">Category / Topic</h4>
-                    <h3 class="text-xl font-bold uppercase tracking-wide">Project Title One</h3>
+    <section id="portfolio" class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-8 md:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-2">Recent Projects</h2>
+                    <p class="text-gray-400">A collection of my recent work.</p>
                 </div>
-                <div class="group">
-                    <div class="aspect-video bg-gray-800 rounded-2xl overflow-hidden glass-card mb-4">
-                        <img src="https://via.placeholder.com/640x360" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <a href="#" class="text-blue-500 font-semibold hover:underline">View All Projects</a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white"></i>
+                        </div>
                     </div>
-                    <h4 class="text-blue-400 text-sm font-semibold uppercase">Category / Topic</h4>
-                    <h3 class="text-xl font-bold uppercase tracking-wide">Project Title Two</h3>
+                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Documentary</p>
+                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">The Art of Storytelling</h3>
                 </div>
-                <div class="group">
-                    <div class="aspect-video bg-gray-800 rounded-2xl overflow-hidden glass-card mb-4">
-                        <img src="https://via.placeholder.com/640x360" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white"></i>
+                        </div>
                     </div>
-                    <h4 class="text-blue-400 text-sm font-semibold uppercase">Category / Topic</h4>
-                    <h3 class="text-xl font-bold uppercase tracking-wide">Project Title Three</h3>
+                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Social Media</p>
+                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Scaling Content 2026</h3>
                 </div>
-                <div class="group">
-                    <div class="aspect-video bg-gray-800 rounded-2xl overflow-hidden glass-card mb-4">
-                        <img src="https://via.placeholder.com/640x360" alt="Thumbnail" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white"></i>
+                        </div>
                     </div>
-                    <h4 class="text-blue-400 text-sm font-semibold uppercase">Category / Topic</h4>
-                    <h3 class="text-xl font-bold uppercase tracking-wide">Project Title Four</h3>
+                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Commercial</p>
+                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Brand Identity Tech</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Personal Brand</p>
+                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Creator Economy Insights</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6 max-w-2xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Let's Connect</h2>
-            <form class="glass-card p-8 rounded-3xl space-y-4">
-                <div class="grid md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Your Name" class="w-full bg-slate-800 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition">
-                    <input type="email" placeholder="Your Email" class="w-full bg-slate-800 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition">
+    <section id="contact" class="py-24">
+        <div class="max-w-3xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Let's Connect</h2>
+                <p class="text-gray-400">Have a project in mind? Reach out and let's create something amazing together.</p>
+            </div>
+            <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-400 ml-1">Full Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-gray-400 ml-1">Email Address</label>
+                        <input type="email" placeholder="john@example.com" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
+                    </div>
                 </div>
-                <input type="text" placeholder="Subject" class="w-full bg-slate-800 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition">
-                <textarea rows="4" placeholder="Your Message" class="w-full bg-slate-800 border border-white/10 rounded-xl p-4 focus:outline-none focus:border-blue-500 transition"></textarea>
-                <button class="w-full py-4 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold transition">Send Message</button>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-400 ml-1">Subject</label>
+                    <input type="text" placeholder="Project Inquiry" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-medium text-gray-400 ml-1">Message</label>
+                    <textarea rows="5" placeholder="Tell me about your project..." class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition"></textarea>
+                </div>
+                <button class="w-full py-5 bg-blue-600 hover:bg-blue-700 rounded-2xl font-bold text-lg transition shadow-xl shadow-blue-500/10">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-10 border-t border-white/10 text-center">
-        <div class="flex justify-center space-x-6 mb-6">
-            <a href="#" class="text-gray-400 hover:text-blue-500 text-xl"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="text-gray-400 hover:text-pink-500 text-xl"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-gray-400 hover:text-red-500 text-xl"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-gray-400 hover:text-blue-700 text-xl"><i class="fab fa-linkedin"></i></a>
+    <footer class="py-16 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
+            <div class="text-3xl font-bold text-blue-500 mb-8">A.B.</div>
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="#" class="text-gray-400 hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-red-500 text-2xl transition"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm text-center">
+                &copy; 2026 Arnob Biswas. Built with passion from Magura.
+            </p>
         </div>
-        <p class="text-gray-500 text-sm">&copy; 2026 Arnob Biswas. All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -173,13 +228,16 @@
             currentText = words[count];
             letter = currentText.slice(0, ++index);
 
-            document.getElementById("typewriter").textContent = letter;
-            if (letter.length === currentText.length) {
-                count++;
-                index = 0;
-                setTimeout(type, 2000); 
-            } else {
-                setTimeout(type, 150); 
+            const element = document.getElementById("typewriter");
+            if(element) {
+                element.textContent = letter;
+                if (letter.length === currentText.length) {
+                    count++;
+                    index = 0;
+                    setTimeout(type, 2000); 
+                } else {
+                    setTimeout(type, 150); 
+                }
             }
         }());
     </script>
