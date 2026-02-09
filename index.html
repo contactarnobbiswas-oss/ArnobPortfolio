@@ -9,7 +9,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        /* Poppins font locked to prevent italic issues */
+        /* Poppins font locked to prevent italic issues and ensure consistency */
         body { 
             font-family: 'Poppins', sans-serif !important; 
             font-style: normal !important;
@@ -21,14 +21,14 @@
 
         * { font-style: normal !important; }
 
-        /* Logo Size - Made even larger as requested */
+        /* Logo Size - Precisely set to 65px and 82px as requested */
         .nav-logo {
-            height: 68px; /* আগের চেয়ে আরও বড় করা হয়েছে */
+            height: 65px; 
             width: auto;
             display: block;
         }
         .footer-logo {
-            height: 85px; /* ফুটার লোগোও সামঞ্জস্যপূর্ণভাবে বড় করা হয়েছে */
+            height: 82px; 
             width: auto;
             display: block;
         }
@@ -52,7 +52,7 @@
 <body>
 
     <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-center md:justify-between items-center">
             <a href="#home">
                 <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
             </a>
@@ -83,7 +83,7 @@
                 <div class="relative group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                     <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-2 border-blue-500/20 overflow-hidden shadow-2xl">
-                        <img src="photo.jpg" alt="Arnob Biswas" class="w-full h-full object-cover">
+                        <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -180,18 +180,18 @@
     </section>
 
     <section id="contact" class="py-24">
-        <div class="max-w-3xl mx-auto px-8">
-            <div class="text-center mb-16">
+        <div class="max-w-3xl mx-auto px-8 text-center">
+            <div class="mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-                <p class="text-gray-400">Have a project in mind? Reach out and let's create something amazing together.</p>
+                <p class="text-gray-400 text-sm">Have a project in mind? Reach out and let's create something amazing together.</p>
             </div>
-            <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6">
+            <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6 text-left">
                 <div class="grid md:grid-cols-2 gap-6">
                     <input type="text" placeholder="Full Name" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
                     <input type="email" placeholder="Email Address" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
                 </div>
                 <input type="text" placeholder="Subject" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
-                <textarea rows="5" placeholder="Tell me about your project..." class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition"></textarea>
+                <textarea rows="5" placeholder="Your Message" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition"></textarea>
                 <button class="w-full py-5 bg-blue-600 hover:bg-blue-700 rounded-2xl font-bold text-lg transition shadow-xl shadow-blue-500/10">Send Message</button>
             </form>
         </div>
