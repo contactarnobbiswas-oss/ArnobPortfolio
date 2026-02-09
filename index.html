@@ -7,9 +7,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* Importing Signature and Body Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Mrs+Saint+Delafield&display=swap');
+        
         body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
         
+        /* Signature Logo Style */
+        .signature-logo {
+            font-family: 'Mrs Saint Delafield', cursive;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #3b82f6; /* Blue-500 */
+            letter-spacing: 2px;
+        }
+
         /* Typewriter Cursor */
         .typewriter::after {
             content: "|";
@@ -29,9 +40,9 @@
 <body>
 
     <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter text-blue-500">
-                A.B.
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-2 flex justify-between items-center">
+            <div class="signature-logo">
+                Arnob Biswas
             </div>
             <div class="hidden md:flex space-x-10 font-medium text-sm lg:text-base">
                 <a href="#home" class="hover:text-blue-400 transition">Home</a>
@@ -70,12 +81,12 @@
         <div class="max-w-7xl mx-auto px-8 md:px-16">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Expertise</h2>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center">
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Video Editing</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Storytelling</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Content Creation</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Strategy Setup</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Scripting</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Thumbnail Design</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide text-sm md:text-base">Video Editing</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide text-sm md:text-base">Storytelling</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide text-sm md:text-base">Content Creation</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide text-sm md:text-base">Strategy Setup</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide text-sm md:text-base">Scripting</div>
+                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide text-sm md:text-base">Thumbnail Design</div>
             </div>
         </div>
     </section>
@@ -196,7 +207,7 @@
 
     <footer class="py-16 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
-            <div class="text-3xl font-bold text-blue-500 mb-8">A.B.</div>
+            <div class="signature-logo mb-8">Arnob Biswas</div>
             <div class="flex justify-center space-x-8 mb-10">
                 <a href="#" class="text-gray-400 hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="text-gray-400 hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
@@ -204,8 +215,8 @@
                 <a href="#" class="text-gray-400 hover:text-red-500 text-2xl transition"><i class="fab fa-youtube"></i></a>
                 <a href="#" class="text-gray-400 hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p class="text-gray-500 text-sm text-center">
-                &copy; 2026 Arnob Biswas. Built with passion from Magura.
+            <p class="text-gray-500 text-sm text-center font-medium">
+                &copy; 2026 Arnob Biswas. All rights reserved.
             </p>
         </div>
     </footer>
