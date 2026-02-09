@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ১. কাস্টম ফন্ট সেটআপ - Janelotus.ttf ফাইলটি index.html এর পাশেই আছে */
+        /* ১. কাস্টম ফন্ট সেটআপ */
         @font-face {
             font-family: 'Janelotus';
             src: url('Janelotus.ttf') format('truetype'); 
@@ -17,12 +17,17 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
+        /* ২. সব কিছুর জন্য Poppins ফিক্স করা (যেন লিক না হয়) */
+        body, h1, h2, h3, h4, p, a, button, input, textarea, span:not(.signature-logo):not(.typewriter) { 
+            font-family: 'Poppins', sans-serif !important; 
+        }
         
-        /* ২. লোগো ও ফুটারের জন্য আপনার পছন্দের সিগনেচার স্টাইল */
+        body { scroll-behavior: smooth; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
+        
+        /* ৩. লোগো ও ফুটারে সিগনেচার স্টাইল (Size reduced for better look) */
         .signature-logo {
-            font-family: 'Janelotus', cursive;
-            font-size: 3rem; 
+            font-family: 'Janelotus', cursive !important;
+            font-size: 2.2rem !important; /* ৩rem থেকে ২.২rem করা হয়েছে */
             color: #3b82f6;
             line-height: 1;
             letter-spacing: 1px;
