@@ -13,7 +13,6 @@
             --bg-deep: #1a252f;      /* প্যালেট থেকে গাঢ় নেভি */
             --muted-gold: #9a916c;   /* প্যালেট থেকে গোল্ডেন টোন */
             --accent-yellow: #fbc02d;/* প্যালেট থেকে ভাইব্রেন্ট ইয়োলো */
-            --text-light: #f1f5f4;   /* প্যালেট থেকে টেক্সট কালার */
         }
 
         body { 
@@ -21,13 +20,13 @@
             font-style: normal !important;
             scroll-behavior: smooth; 
             background-color: var(--bg-deep); 
-            color: var(--text-light); 
+            color: #f8fafc; 
             overflow-x: hidden; 
         }
 
         * { font-style: normal !important; }
 
-        /* Logo Size - Exactly as requested */
+        /* Logo Size - Precisely set to 65px and 82px */
         .nav-logo { height: 65px; width: auto; display: block; }
         .footer-logo { height: 82px; width: auto; display: block; }
 
@@ -74,7 +73,7 @@
                     A passionate <span id="typewriter" class="font-semibold typewriter" style="color: var(--accent-yellow);"></span>
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <button class="px-8 py-4 rounded-full font-bold transition shadow-lg shadow-yellow-500/10" 
+                    <button class="px-8 py-4 font-bold transition shadow-lg shadow-yellow-500/10 rounded-full" 
                             style="background-color: var(--accent-yellow); color: #000;">Let's Work Together</button>
                     <button class="px-8 py-4 border rounded-full font-bold transition hover:bg-white/5"
                             style="border-color: var(--muted-gold); color: var(--muted-gold);">View Portfolio</button>
@@ -85,7 +84,7 @@
                     <div class="absolute -inset-1 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"
                          style="background: linear-gradient(to right, var(--accent-yellow), var(--muted-gold));"></div>
                     <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-2 overflow-hidden shadow-2xl"
-                         style="border-color: rgba(251, 192, 45, 0.2);">
+                         style="border-color: rgba(154, 145, 108, 0.3);">
                         <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -161,6 +160,22 @@
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Social Media</p>
                     <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">Scaling Content 2026</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Commercial</p>
+                    <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">Brand Identity Tech</h3>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    </div>
+                    <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Personal Brand</p>
+                    <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">Creator Economy Insights</h3>
                 </div>
             </div>
         </div>
