@@ -3,65 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnob Biswas | Portfolio</title>
+    <title>Arnob Biswas | Personal Brand</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
-        /* Poppins font locked to prevent italic issues and ensure consistency */
+        /* আপনার দেওয়া প্যালেট থেকে কালার ভেরিয়েবল */
+        :root {
+            --bg-deep: #1a252f;      /* Dark Charcoal/Navy from Palette */
+            --muted-gold: #9a916c;   /* Olive/Gold Tone from Palette */
+            --light-gray: #f1f5f4;   /* Off-white from Palette */
+            --accent-yellow: #fbc02d;/* Vibrant Yellow from Palette */
+            --soft-yellow: #fef08a;  /* Light Yellow/Cream from Palette */
+        }
+
         body { 
             font-family: 'Poppins', sans-serif !important; 
             font-style: normal !important;
             scroll-behavior: smooth; 
-            background-color: #0f172a; 
-            color: #f8fafc; 
+            background-color: var(--bg-deep); 
+            color: var(--light-gray); 
             overflow-x: hidden; 
         }
 
         * { font-style: normal !important; }
 
-        /* Logo Size - Precisely set to 65px and 82px as requested */
-        .nav-logo {
-            height: 65px; 
-            width: auto;
-            display: block;
-        }
-        .footer-logo {
-            height: 82px; 
-            width: auto;
-            display: block;
-        }
+        /* Logo Sizes as per instruction */
+        .nav-logo { height: 65px; width: auto; display: block; }
+        .footer-logo { height: 82px; width: auto; display: block; }
 
         /* Typewriter Cursor */
         .typewriter::after {
             content: "|";
             animation: blink 0.7s infinite;
+            color: var(--accent-yellow);
         }
         @keyframes blink { 50% { opacity: 0; } }
         
+        /* Premium Glass Card with Muted Gold Border */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(154, 145, 108, 0.2); /* Muted Gold Border */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .glass-card:hover { transform: translateY(-5px); border-color: #3b82f6; }
+        .glass-card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent-yellow); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Active Navigation Link */
+        .nav-link:hover { color: var(--accent-yellow); }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-deep); }
+        ::-webkit-scrollbar-thumb { background: var(--muted-gold); border-radius: 10px; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-[#0f172a]/80 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-center md:justify-between items-center">
+    <nav class="fixed w-full z-50 bg-[#1a252f]/90 backdrop-blur-lg border-b border-[#9a916c]/10">
+        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-between items-center">
             <a href="#home">
                 <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
             </a>
             
-            <div class="hidden md:flex space-x-10 font-medium text-sm lg:text-base">
-                <a href="#home" class="hover:text-blue-400 transition">Home</a>
-                <a href="#services" class="hover:text-blue-400 transition">Services</a>
-                <a href="#portfolio" class="hover:text-blue-400 transition">Portfolio</a>
-                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+            <div class="hidden md:flex space-x-10 font-medium text-sm tracking-widest uppercase">
+                <a href="#home" class="nav-link transition">Home</a>
+                <a href="#services" class="nav-link transition">Services</a>
+                <a href="#portfolio" class="nav-link transition">Portfolio</a>
+                <a href="#contact" class="nav-link transition">Contact</a>
             </div>
         </div>
     </nav>
@@ -69,111 +83,103 @@
     <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0">
         <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col-reverse md:flex-row items-center w-full">
             <div class="md:w-3/5 mt-12 md:mt-0 text-center md:text-left">
-                <h3 class="text-xl md:text-2xl text-blue-400 font-light mb-2">Hey! I'm</h3>
-                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight">Arnob Biswas</h1>
+                <h3 class="text-xl md:text-2xl font-semibold mb-2" style="color: var(--muted-gold);">Hey! I'm</h3>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight uppercase">Arnob Biswas</h1>
                 <p class="text-2xl md:text-3xl text-gray-400 font-light min-h-[40px]">
-                    A passionate <span id="typewriter" class="text-blue-500 font-semibold typewriter"></span>
+                    A passionate <span id="typewriter" class="font-semibold typewriter" style="color: var(--accent-yellow);"></span>
                 </p>
-                <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <button class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full font-bold transition shadow-lg shadow-blue-500/20">Let's Work Together</button>
-                    <button class="px-8 py-4 border border-white/20 hover:bg-white/5 rounded-full font-bold transition">View Portfolio</button>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-5">
+                    <button class="px-10 py-4 font-bold transition shadow-2xl rounded-sm uppercase tracking-wider" 
+                            style="background-color: var(--accent-yellow); color: var(--bg-deep);">
+                        Let's Work Together
+                    </button>
+                    <button class="px-10 py-4 border font-bold transition rounded-sm uppercase tracking-wider hover:bg-white/5"
+                            style="border-color: var(--muted-gold); color: var(--muted-gold);">
+                        View Portfolio
+                    </button>
                 </div>
             </div>
             <div class="md:w-2/5 flex justify-center md:justify-end">
                 <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-2 border-blue-500/20 overflow-hidden shadow-2xl">
-                        <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover">
+                    <div class="absolute -inset-2 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000"
+                         style="background-color: var(--accent-yellow);"></div>
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-4 overflow-hidden shadow-2xl"
+                         style="border-color: var(--muted-gold);">
+                        <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900/30">
+    <section class="py-24" style="background-color: rgba(26, 37, 47, 0.5);">
         <div class="max-w-7xl mx-auto px-8 md:px-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Expertise</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 uppercase tracking-tighter">My Expertise</h2>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center">
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Video Editing</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Storytelling</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Content Creation</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Strategy Setup</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Scripting</div>
-                <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide">Thumbnail Design</div>
+                <div class="p-8 glass-card rounded-xl font-bold uppercase tracking-widest text-sm">Video Editing</div>
+                <div class="p-8 glass-card rounded-xl font-bold uppercase tracking-widest text-sm">Storytelling</div>
+                <div class="p-8 glass-card rounded-xl font-bold uppercase tracking-widest text-sm">Content Creation</div>
+                <div class="p-8 glass-card rounded-xl font-bold uppercase tracking-widest text-sm">Strategy Setup</div>
+                <div class="p-8 glass-card rounded-xl font-bold uppercase tracking-widest text-sm">Scripting</div>
+                <div class="p-8 glass-card rounded-xl font-bold uppercase tracking-widest text-sm">Thumbnail Design</div>
             </div>
         </div>
     </section>
 
     <section id="services" class="py-24">
         <div class="max-w-7xl mx-auto px-8 md:px-16 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Services</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 glass-card rounded-[2.5rem] text-left">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-film text-2xl text-blue-500"></i>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 uppercase tracking-tighter">My Services</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-10 glass-card rounded-3xl text-left border-t-4" style="border-top-color: var(--accent-yellow);">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background-color: rgba(251, 192, 45, 0.1);">
+                        <i class="fas fa-film text-2xl" style="color: var(--accent-yellow);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Video Editing & Visual Storytelling</h3>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Video Editing & Storytelling</h3>
                     <p class="text-gray-400 leading-relaxed text-sm">Cinematic sequences and emotional narratives tailored for high-impact viewing experiences.</p>
                 </div>
-                <div class="p-10 glass-card rounded-[2.5rem] text-left">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-lightbulb text-2xl text-blue-500"></i>
+                <div class="p-10 glass-card rounded-3xl text-left border-t-4" style="border-top-color: var(--muted-gold);">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background-color: rgba(154, 145, 108, 0.1);">
+                        <i class="fas fa-lightbulb text-2xl" style="color: var(--muted-gold);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Content Strategy & Consulting</h3>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Content Strategy</h3>
                     <p class="text-gray-400 leading-relaxed text-sm">Strategic planning to scale your personal brand and optimize channel performance.</p>
                 </div>
-                <div class="p-10 glass-card rounded-[2.5rem] text-left">
-                    <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6">
-                        <i class="fas fa-handshake text-2xl text-blue-500"></i>
+                <div class="p-10 glass-card rounded-3xl text-left border-t-4" style="border-top-color: var(--accent-yellow);">
+                    <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6" style="background-color: rgba(251, 192, 45, 0.1);">
+                        <i class="fas fa-handshake text-2xl" style="color: var(--accent-yellow);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Brand Collabs & Sponsorships</h3>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Brand Partnerships</h3>
                     <p class="text-gray-400 leading-relaxed text-sm">Bridging the gap between creators and brands for authentic partnerships.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 bg-slate-900/30">
+    <section id="portfolio" class="py-24" style="background-color: rgba(26, 37, 47, 0.5);">
         <div class="max-w-7xl mx-auto px-8 md:px-16">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2">Recent Projects</h2>
-                <p class="text-gray-400">A collection of my recent work.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 uppercase tracking-tighter">Recent Projects</h2>
+                <div class="w-20 h-1 mx-auto mt-4" style="background-color: var(--accent-yellow);"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
+            <div class="grid md:grid-cols-2 gap-12">
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
-                            <i class="fas fa-play-circle text-6xl text-white"></i>
+                    <div class="aspect-video bg-[#111] rounded-2xl overflow-hidden glass-card mb-6 relative border-0">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-60 group-hover:opacity-100">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
+                            <i class="fas fa-play-circle text-6xl" style="color: var(--accent-yellow);"></i>
                         </div>
                     </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Documentary</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">The Art of Storytelling</h3>
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Visual Storytelling</p>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight">The Art of Storytelling</h3>
                 </div>
                 
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="aspect-video bg-[#111] rounded-2xl overflow-hidden glass-card mb-6 relative border-0">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-60 group-hover:opacity-100">
                     </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Social Media</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Scaling Content 2026</h3>
-                </div>
-
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Commercial</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Brand Identity Tech</h3>
-                </div>
-
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <p class="text-blue-400 text-sm font-bold uppercase tracking-widest mb-2">Personal Brand</p>
-                    <h3 class="text-2xl font-bold group-hover:text-blue-400 transition">Creator Economy Insights</h3>
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Commercial</p>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight">Scaling Content 2026</h3>
                 </div>
             </div>
         </div>
@@ -181,35 +187,33 @@
 
     <section id="contact" class="py-24">
         <div class="max-w-3xl mx-auto px-8 text-center">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-                <p class="text-gray-400 text-sm">Have a project in mind? Reach out and let's create something amazing together.</p>
-            </div>
-            <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6 text-left">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 uppercase tracking-tighter">Let's Connect</h2>
+            <form class="glass-card p-10 md:p-12 rounded-2xl space-y-6 text-left">
                 <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="Full Name" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
-                    <input type="email" placeholder="Email Address" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
+                    <input type="text" placeholder="Full Name" class="w-full bg-[#0f172a]/50 border border-[#9a916c]/30 rounded-lg p-4 focus:outline-none focus:border-[#fbc02d] transition text-white">
+                    <input type="email" placeholder="Email Address" class="w-full bg-[#0f172a]/50 border border-[#9a916c]/30 rounded-lg p-4 focus:outline-none focus:border-[#fbc02d] transition text-white">
                 </div>
-                <input type="text" placeholder="Subject" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition">
-                <textarea rows="5" placeholder="Your Message" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-blue-500 transition"></textarea>
-                <button class="w-full py-5 bg-blue-600 hover:bg-blue-700 rounded-2xl font-bold text-lg transition shadow-xl shadow-blue-500/10">Send Message</button>
+                <textarea rows="5" placeholder="Your Message" class="w-full bg-[#0f172a]/50 border border-[#9a916c]/30 rounded-lg p-4 focus:outline-none focus:border-[#fbc02d] transition text-white"></textarea>
+                <button class="w-full py-5 font-bold text-lg transition uppercase tracking-widest" 
+                        style="background-color: var(--accent-yellow); color: var(--bg-deep);">
+                    Send Message
+                </button>
             </form>
         </div>
     </section>
 
-    <footer class="py-16 border-t border-white/10">
+    <footer class="py-16 border-t" style="border-color: rgba(154, 145, 108, 0.1); background-color: #0d141b;">
         <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
-            <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8">
+            <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-10">
             
-            <div class="flex justify-center space-x-8 mb-10 text-gray-400">
-                <a href="#" class="hover:text-blue-500 text-2xl transition"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="hover:text-pink-500 text-2xl transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-blue-400 text-2xl transition"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-red-500 text-2xl transition"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="hover:text-blue-700 text-2xl transition"><i class="fab fa-linkedin"></i></a>
+            <div class="flex justify-center space-x-10 mb-12">
+                <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p class="text-gray-500 text-sm text-center font-medium">
-                &copy; 2026 Arnob Biswas. Built with passion from Magura.
+            <p class="text-gray-500 text-xs tracking-widest text-center uppercase">
+                &copy; 2026 Arnob Biswas. Created for Excellence.
             </p>
         </div>
     </footer>
