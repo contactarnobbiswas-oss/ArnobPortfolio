@@ -10,10 +10,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            --bg-deep: #1a252f;      /* প্যালেট থেকে গাঢ় নেভি */
-            --muted-gold: #9a916c;   /* প্যালেট থেকে গোল্ডেন টোন */
-            --accent-yellow: #fbc02d;/* প্যালেট থেকে ভাইব্রেন্ট ইয়োলো */
-            --text-light: #f1f5f4;   /* প্যালেট থেকে অফ-হোয়াইট */
+            --bg-deep: #1a252f;
+            --muted-gold: #9a916c;
+            --accent-yellow: #fbc02d;
+            --text-light: #f1f5f4;
         }
 
         body { 
@@ -27,11 +27,9 @@
 
         * { font-style: normal !important; }
 
-        /* Logo Size - Precisely set to 65px and 82px */
         .nav-logo { height: 65px; width: auto; display: block; }
         .footer-logo { height: 70px; width: auto; display: block; }
 
-        /* Typewriter Cursor */
         .typewriter::after {
             content: "|";
             animation: blink 0.7s infinite;
@@ -39,7 +37,6 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
         
-        /* Glass Card - Mobile Perfect Center Alignment */
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
@@ -52,7 +49,6 @@
         }
         .glass-card:hover { transform: translateY(-5px); border-color: var(--accent-yellow); }
 
-        /* Mobile Optimization */
         @media (max-width: 768px) {
             .nav-logo { height: 50px; }
             .expertise-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
@@ -64,7 +60,7 @@
 <body>
 
     <nav class="fixed w-full z-50 bg-[#1a252f]/80 backdrop-blur-md border-b border-[#9a916c]/10">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 py-4 flex justify-center md:justify-between items-center">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 py-4 flex justify-center md:justify-between items-center">
             <a href="#home">
                 <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
             </a>
@@ -79,7 +75,7 @@
     </nav>
 
     <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col-reverse md:flex-row items-center w-full">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col-reverse md:flex-row items-center w-full">
             <div class="md:w-3/5 mt-12 md:mt-0 text-center md:text-left">
                 <h3 class="text-xl md:text-2xl font-light mb-2" style="color: var(--muted-gold);">Hey! I'm</h3>
                 <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight hero-title">Arnob Biswas</h1>
@@ -107,7 +103,7 @@
     </section>
 
     <section class="py-24 bg-[#0d141b]/30">
-        <div class="max-w-7xl mx-auto px-8 md:px-16">
+        <div class="max-w-6xl mx-auto px-8 md:px-12">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Expertise</h2>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center expertise-grid">
                 <div class="p-8 glass-card rounded-2xl font-semibold tracking-wide h-full">Video Editing</div>
@@ -121,7 +117,7 @@
     </section>
 
     <section id="services" class="py-24">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 text-center">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-10 glass-card rounded-[2.5rem] flex-col !justify-start text-left">
@@ -150,7 +146,7 @@
     </section>
 
     <section id="portfolio" class="py-24 bg-[#0d141b]/30">
-        <div class="max-w-7xl mx-auto px-8 md:px-16">
+        <div class="max-w-6xl mx-auto px-8 md:px-12">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-2">Recent Projects</h2>
                 <p class="text-gray-400">A collection of my recent work.</p>
@@ -215,7 +211,7 @@
     </section>
 
     <footer class="py-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-8 md:px-16 flex flex-col items-center">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col items-center">
             <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8">
             
             <div class="flex justify-center space-x-8 mb-10 text-gray-400">
@@ -226,7 +222,7 @@
                 <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-linkedin"></i></a>
             </div>
             <p class="text-gray-500 text-sm text-center font-medium">
-                &copy; 2026 Arnob Biswas. All Rights Reserved.
+                &copy; 2026 Arnob Biswas. Built with passion from Magura.
             </p>
         </div>
     </footer>
@@ -248,5 +244,3 @@
     </script>
 </body>
 </html>
-
-
