@@ -10,10 +10,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            --bg-deep: #1a252f;
-            --muted-gold: #9a916c;
+            --bg-deep: #1a252f;      /* আপনার পছন্দের ডার্ক নেভি */
+            --muted-gold: #9a916c;   
             --accent-yellow: #fbc02d;
-            --text-light: #f1f5f4;
+            --text-light: #f1f5f4;   
         }
 
         body { 
@@ -59,7 +59,7 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-[#1a252f]/80 backdrop-blur-md border-b border-[#9a916c]/10">
+    <nav class="fixed w-full z-50 bg-[#1a252f] border-b border-[#9a916c]/10">
         <div class="max-w-6xl mx-auto px-8 md:px-12 py-4 flex justify-center md:justify-between items-center">
             <a href="#home">
                 <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
@@ -74,7 +74,7 @@
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0">
+    <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0 bg-[#1a252f]">
         <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col-reverse md:flex-row items-center w-full">
             <div class="md:w-3/5 mt-12 md:mt-0 text-center md:text-left">
                 <h3 class="text-xl md:text-2xl font-light mb-2" style="color: var(--muted-gold);">Hey! I'm</h3>
@@ -116,7 +116,7 @@
         </div>
     </section>
 
-    <section id="services" class="py-24">
+    <section id="services" class="py-24 bg-[#1a252f]">
         <div class="max-w-6xl mx-auto px-8 md:px-12 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
@@ -156,9 +156,6 @@
                 <div class="group cursor-pointer">
                     <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center" style="background-color: rgba(251, 192, 45, 0.2);">
-                            <i class="fas fa-play-circle text-6xl text-white"></i>
-                        </div>
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Documentary</p>
                     <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">The Art of Storytelling</h3>
@@ -171,27 +168,11 @@
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Social Media</p>
                     <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">Scaling Content 2026</h3>
                 </div>
-
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Commercial</p>
-                    <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">Brand Identity Tech</h3>
-                </div>
-
-                <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
-                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    </div>
-                    <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Personal Brand</p>
-                    <h3 class="text-2xl font-bold group-hover:text-[#fbc02d] transition">Creator Economy Insights</h3>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24">
+    <section id="contact" class="py-24 bg-[#1a252f]">
         <div class="max-w-3xl mx-auto px-8 text-center">
             <div class="mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
@@ -202,7 +183,6 @@
                     <input type="text" placeholder="Full Name" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition">
                     <input type="email" placeholder="Email Address" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition">
                 </div>
-                <input type="text" placeholder="Subject" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition mb-6">
                 <textarea rows="5" placeholder="Your Message" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition mb-6"></textarea>
                 <button class="w-full py-5 rounded-2xl font-bold text-lg transition shadow-xl shadow-yellow-500/10" 
                         style="background-color: var(--accent-yellow); color: #000;">Send Message</button>
@@ -210,19 +190,16 @@
         </div>
     </section>
 
-    <footer class="py-16 border-t border-white/10">
+    <footer class="py-16 bg-[#1a252f] border-t border-white/10">
         <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col items-center">
             <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8">
-            
             <div class="flex justify-center space-x-8 mb-10 text-gray-400">
                 <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="hover:text-[#fbc02d] text-2xl transition"><i class="fab fa-linkedin"></i></a>
             </div>
             <p class="text-gray-500 text-sm text-center font-medium">
-                &copy; 2026 Arnob Biswas. Built with passion from Magura.
+                &copy; 2026 Arnob Biswas. All Rights Reserved.
             </p>
         </div>
     </footer>
