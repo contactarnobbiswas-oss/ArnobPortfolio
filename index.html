@@ -10,11 +10,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            /* Palette from your provided image */
+            /* New Palette based on your image */
             --accent-mint: #4BBD99;       /* Mint Green */
-            --bg-dark: #161529;           /* Deep Navy from image */
-            --bg-secondary: #14324C;      /* Secondary Navy from image */
+            --bg-dark: #161529;           /* Deep Navy background */
+            --bg-secondary: #14324C;      /* Secondary Navy */
             --pure-white: #FFFFFF;
+            --text-gray: #EAEAEA;
         }
 
         body { 
@@ -38,10 +39,11 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
         
+        /* Glass Card for Services & Contact */
         .glass-card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(75, 189, 153, 0.15); 
+            border: 1px solid rgba(75, 189, 153, 0.2); 
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -54,15 +56,24 @@
             box-shadow: 0 10px 30px -10px rgba(75, 189, 153, 0.3);
         }
 
-        /* Expertise Boxes - Added Flex for perfect centering on mobile */
+        /* NEW STYLE: Expertise Boxes */
         .expertise-box {
-            background-color: var(--accent-mint) !important;
-            color: #161529 !important; /* Dark text for contrast */
-            border: none !important;
+            background-color: transparent !important; /* Transparent background initially */
+            border: 2px solid var(--accent-mint) !important; /* Visible mint border */
+            color: var(--pure-white) !important; /* White text */
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
             text-align: center !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* Hover effect for "selected" look */
+        .expertise-box:hover {
+            background-color: var(--accent-mint) !important; /* Fill with mint color */
+            color: var(--bg-dark) !important; /* Dark text for contrast */
+            box-shadow: 0 10px 30px -10px rgba(75, 189, 153, 0.5) !important; /* Glow effect */
+            transform: translateY(-5px) !important;
         }
 
         @media (max-width: 768px) {
