@@ -10,12 +10,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            --bg-main: #FFFFFF;          /* Pure White for freshness */
-            --bg-sub: #F2F2F2;           /* Off-White for section contrast */
-            --text-main: #000000;        /* Bold Black for headings */
-            --text-muted: #6D6E71;       /* Deep Gray for descriptions */
-            --accent-yellow: #FDD700;    /* Your Signature Yellow */
-            --card-border: rgba(0, 0, 0, 0.05);
+            --bg-main: #FFFFFF;          /* Pure White */
+            --bg-sub: #F2F2F2;           /* Light Gray for section contrast */
+            --text-main: #000000;        /* Bold Black */
+            --text-muted: #6D6E71;       /* Dark Gray for sub-text */
+            --accent-yellow: #FDD700;    /* Vibrant Yellow */
         }
 
         body { 
@@ -40,15 +39,14 @@
         @keyframes blink { 50% { opacity: 0; } }
         
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--card-border);
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
         }
         .glass-card:hover { 
             transform: translateY(-5px); 
@@ -66,7 +64,7 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-8 md:px-12 py-4 flex justify-center md:justify-between items-center">
             <a href="#home">
                 <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
@@ -161,22 +159,22 @@
             
             <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-200 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0 shadow-none">
+                    <div class="aspect-video bg-white rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0 shadow-none">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center" style="background-color: rgba(0, 0, 0, 0.4);">
                             <i class="fas fa-play-circle text-6xl text-white"></i>
                         </div>
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--accent-yellow);">Documentary</p>
-                    <h3 class="text-2xl font-bold group-hover:text-black transition text-black">The Art of Storytelling</h3>
+                    <h3 class="text-2xl font-bold group-hover:text-[#FDD700] transition text-black">The Art of Storytelling</h3>
                 </div>
                 
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-200 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0 shadow-none">
+                    <div class="aspect-video bg-white rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0 shadow-none">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--accent-yellow);">Social Media</p>
-                    <h3 class="text-2xl font-bold group-hover:text-black transition text-black">Scaling Content 2026</h3>
+                    <h3 class="text-2xl font-bold group-hover:text-[#FDD700] transition text-black">Scaling Content 2026</h3>
                 </div>
             </div>
         </div>
