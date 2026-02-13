@@ -10,21 +10,26 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            /* Palette from your new provided image */
-            --bg-deep: #161529;      /* Deep Navy/Black background */
-            --accent-mint: #4BBD99;  /* Mint Green accent */
-            --bg-card: #14324C;      /* Secondary Navy for sections */
-            --text-light: #FFFFFF;
-            --text-dim: #EAEAEA;
+            /* Palette from your provided image */
+            --accent-mint: #4BBD99;       /* Mint Green */
+            --bg-dark: #161529;           /* Deep Navy from image */
+            --bg-secondary: #14324C;      /* Secondary Navy from image */
+            --pure-white: #FFFFFF;
         }
 
         body { 
             font-family: 'Poppins', sans-serif !important; 
+            font-style: normal !important;
             scroll-behavior: smooth; 
             overflow-x: hidden; 
-            background-color: var(--bg-deep);
-            color: var(--text-light);
+            background-color: var(--bg-dark);
+            color: var(--pure-white);
         }
+
+        * { font-style: normal !important; }
+
+        .nav-logo { height: 65px; width: auto; display: block; }
+        .footer-logo { height: 70px; width: auto; display: block; }
 
         .typewriter::after {
             content: "|";
@@ -33,12 +38,15 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
         
-        /* Glass Card Effect */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(75, 189, 153, 0.1); 
+            border: 1px solid rgba(75, 189, 153, 0.15); 
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         .glass-card:hover { 
             transform: translateY(-5px); 
@@ -46,59 +54,63 @@
             box-shadow: 0 10px 30px -10px rgba(75, 189, 153, 0.3);
         }
 
-        /* Centering Fix for Expertise Boxes */
+        /* Expertise Boxes - Added Flex for perfect centering on mobile */
         .expertise-box {
             background-color: var(--accent-mint) !important;
-            color: #161529 !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 100px; /* Ensures height for centering */
+            color: #161529 !important; /* Dark text for contrast */
+            border: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
         }
 
         @media (max-width: 768px) {
-            .hero-title { font-size: 3.5rem !important; }
-            .expertise-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .nav-logo { height: 50px; }
+            .expertise-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1rem !important; }
+            .glass-card { min-height: 100px; padding: 1rem !important; font-size: 0.85rem; }
+            .hero-title { font-size: 3rem !important; line-height: 1.2 !important; }
         }
     </style>
 </head>
-<body>
+<body class="bg-[var(--bg-dark)]">
 
-    <nav class="fixed w-full z-50 bg-[#161529]/90 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-6xl mx-auto px-8 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-[#161529]/95 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 py-4 flex justify-center md:justify-between items-center">
             <a href="#home">
-                <img src="logo.png" alt="Arnob Biswas" class="h-[50px] md:h-[65px] w-auto" style="filter: brightness(0) invert(1);">
+                <img src="logo.png" alt="Arnob Biswas" class="nav-logo" style="filter: brightness(0) invert(1);">
             </a>
-            <div class="hidden md:flex space-x-10 font-medium">
-                <a href="#home" class="hover:text-[#4BBD99] transition">Home</a>
-                <a href="#services" class="hover:text-[#4BBD99] transition">Services</a>
-                <a href="#portfolio" class="hover:text-[#4BBD99] transition">Portfolio</a>
-                <a href="#contact" class="hover:text-[#4BBD99] transition">Contact</a>
+            
+            <div class="hidden md:flex space-x-10 font-medium text-sm lg:text-base">
+                <a href="#home" class="text-white hover:text-[#4BBD99] transition">Home</a>
+                <a href="#services" class="text-white hover:text-[#4BBD99] transition">Services</a>
+                <a href="#portfolio" class="text-white hover:text-[#4BBD99] transition">Portfolio</a>
+                <a href="#contact" class="text-white hover:text-[#4BBD99] transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center pt-20">
+    <section id="home" class="min-h-screen flex items-center pt-24 md:pt-0 bg-[#161529]">
         <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col-reverse md:flex-row items-center w-full">
             <div class="md:w-3/5 mt-12 md:mt-0 text-center md:text-left">
                 <h3 class="text-xl md:text-2xl font-semibold mb-2" style="color: var(--accent-mint);">Hey! I'm</h3>
-                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight hero-title">Arnob Biswas</h1>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight hero-title text-white">Arnob Biswas</h1>
                 <p class="text-2xl md:text-3xl text-gray-400 font-light min-h-[40px]">
                     A passionate <span id="typewriter" class="font-semibold typewriter" style="color: var(--accent-mint);"></span>
                 </p>
                 <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <button class="px-8 py-4 font-bold transition shadow-lg shadow-emerald-900/20 rounded-full" 
+                    <button class="px-8 py-4 font-bold transition shadow-lg shadow-emerald-900/40 rounded-full" 
                             style="background-color: var(--accent-mint); color: #161529;">Let's Work Together</button>
-                    <button class="px-8 py-4 border border-white/20 rounded-full font-bold transition hover:bg-white/5">View Portfolio</button>
+                    <button class="px-8 py-4 border rounded-full font-bold transition text-white hover:bg-white/10"
+                            style="border-color: #EAEAEA;">View Portfolio</button>
                 </div>
             </div>
-            <div class="md:w-2/5 flex justify-center">
+            <div class="md:w-2/5 flex justify-center md:justify-end">
                 <div class="relative group">
-                    <div class="absolute -inset-1 rounded-full blur opacity-20 group-hover:opacity-40 transition"
-                         style="background: var(--accent-mint);"></div>
-                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-2 overflow-hidden shadow-2xl"
-                         style="border-color: rgba(75, 189, 153, 0.3);">
+                    <div class="absolute -inset-1 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"
+                         style="background: linear-gradient(to right, var(--accent-mint), #555);"></div>
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border-2 overflow-hidden shadow-2xl"
+                         style="border-color: rgba(75, 189, 153, 0.4);">
                         <img src="https://via.placeholder.com/600" alt="Arnob Biswas" class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -108,42 +120,42 @@
 
     <section class="py-24 bg-[#14324C]">
         <div class="max-w-6xl mx-auto px-8 md:px-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Expertise</h2>
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 expertise-grid">
-                <div class="p-6 expertise-box rounded-2xl font-bold shadow-lg">Video Editing</div>
-                <div class="p-6 expertise-box rounded-2xl font-bold shadow-lg">Storytelling</div>
-                <div class="p-6 expertise-box rounded-2xl font-bold shadow-lg">Content Creation</div>
-                <div class="p-6 expertise-box rounded-2xl font-bold shadow-lg">Strategy Setup</div>
-                <div class="p-6 expertise-box rounded-2xl font-bold shadow-lg">Scripting</div>
-                <div class="p-6 expertise-box rounded-2xl font-bold shadow-lg">Thumbnail Design</div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">My Expertise</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center expertise-grid">
+                <div class="p-8 expertise-box rounded-2xl font-bold tracking-wide h-full shadow-lg">Video Editing</div>
+                <div class="p-8 expertise-box rounded-2xl font-bold tracking-wide h-full shadow-lg">Storytelling</div>
+                <div class="p-8 expertise-box rounded-2xl font-bold tracking-wide h-full shadow-lg">Content Creation</div>
+                <div class="p-8 expertise-box rounded-2xl font-bold tracking-wide h-full shadow-lg">Strategy Setup</div>
+                <div class="p-8 expertise-box rounded-2xl font-bold tracking-wide h-full shadow-lg">Scripting</div>
+                <div class="p-8 expertise-box rounded-2xl font-bold tracking-wide h-full shadow-lg">Thumbnail Design</div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-24">
-        <div class="max-w-6xl mx-auto px-8 md:px-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Services</h2>
+    <section id="services" class="py-24 bg-[#161529]">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white">My Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 glass-card rounded-[2.5rem] flex flex-col items-start">
-                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-emerald-500/10">
+                <div class="p-10 glass-card rounded-[2.5rem] flex-col !justify-start text-left">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(75, 189, 153, 0.1);">
                         <i class="fas fa-film text-2xl" style="color: var(--accent-mint);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Video Editing</h3>
-                    <p class="text-gray-400 text-sm">Cinematic sequences and emotional narratives for high-impact viewing.</p>
+                    <h3 class="text-xl font-bold mb-4 text-white">Video Editing & Visual Storytelling</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Cinematic sequences and emotional narratives tailored for high-impact viewing experiences.</p>
                 </div>
-                <div class="p-10 glass-card rounded-[2.5rem] flex flex-col items-start">
-                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-emerald-500/10">
+                <div class="p-10 glass-card rounded-[2.5rem] flex-col !justify-start text-left">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(75, 189, 153, 0.1);">
                         <i class="fas fa-lightbulb text-2xl" style="color: var(--accent-mint);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Content Strategy</h3>
-                    <p class="text-gray-400 text-sm">Strategic planning to scale your personal brand and optimize performance.</p>
+                    <h3 class="text-xl font-bold mb-4 text-white">Content Strategy & Consulting</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Strategic planning to scale your personal brand and optimize channel performance.</p>
                 </div>
-                <div class="p-10 glass-card rounded-[2.5rem] flex flex-col items-start">
-                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-emerald-500/10">
+                <div class="p-10 glass-card rounded-[2.5rem] flex-col !justify-start text-left">
+                    <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style="background-color: rgba(75, 189, 153, 0.1);">
                         <i class="fas fa-handshake text-2xl" style="color: var(--accent-mint);"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Brand Collabs</h3>
-                    <p class="text-gray-400 text-sm">Bridging the gap between creators and brands for partnerships.</p>
+                    <h3 class="text-xl font-bold mb-4 text-white">Brand Collabs & Sponsorships</h3>
+                    <p class="text-gray-400 leading-relaxed text-sm">Bridging the gap between creators and brands for authentic partnerships.</p>
                 </div>
             </div>
         </div>
@@ -152,68 +164,92 @@
     <section id="portfolio" class="py-24 bg-[#14324C]">
         <div class="max-w-6xl mx-auto px-8 md:px-12">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2">Recent Projects</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white">Recent Projects</h2>
                 <p class="text-gray-400">A showcase of my recent work.</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5">
-                        <img src="https://via.placeholder.com/640x360" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center bg-black/40">
+                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5 shadow-sm">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center bg-black/40">
                             <i class="fas fa-play-circle text-6xl text-[#4BBD99]"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mt-4 group-hover:text-[#4BBD99] transition">The Art of Storytelling</h3>
+                    <p class="text-sm font-bold uppercase tracking-widest mt-6 mb-2" style="color: var(--accent-mint);">Documentary</p>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-[#4BBD99] transition">The Art of Storytelling</h3>
                 </div>
+                
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5">
-                        <img src="https://via.placeholder.com/640x360" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center bg-black/40">
+                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5 shadow-sm">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center bg-black/40">
                             <i class="fas fa-play-circle text-6xl text-[#4BBD99]"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mt-4 group-hover:text-[#4BBD99] transition">Social Media Scaling</h3>
+                    <p class="text-sm font-bold uppercase tracking-widest mt-6 mb-2" style="color: var(--accent-mint);">Social Media</p>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-[#4BBD99] transition">Scaling Content 2026</h3>
                 </div>
+
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5">
-                        <img src="https://via.placeholder.com/640x360" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center bg-black/40">
+                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5 shadow-sm">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center bg-black/40">
                             <i class="fas fa-play-circle text-6xl text-[#4BBD99]"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mt-4 group-hover:text-[#4BBD99] transition">Brand Identity Tech</h3>
+                    <p class="text-sm font-bold uppercase tracking-widest mt-6 mb-2" style="color: var(--accent-mint);">Commercial</p>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-[#4BBD99] transition">Brand Identity Tech</h3>
                 </div>
+
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5">
-                        <img src="https://via.placeholder.com/640x360" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
-                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition flex items-center justify-center bg-black/40">
+                    <div class="aspect-video bg-black rounded-3xl overflow-hidden relative border border-white/5 shadow-sm">
+                        <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80">
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center bg-black/40">
                             <i class="fas fa-play-circle text-6xl text-[#4BBD99]"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mt-4 group-hover:text-[#4BBD99] transition">Creator Economy</h3>
+                    <p class="text-sm font-bold uppercase tracking-widest mt-6 mb-2" style="color: var(--accent-mint);">Personal Brand</p>
+                    <h3 class="text-2xl font-bold text-white group-hover:text-[#4BBD99] transition">Creator Economy Insights</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24">
+    <section id="contact" class="py-24 bg-[#161529]">
         <div class="max-w-3xl mx-auto px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16">Let's Connect</h2>
-            <form class="glass-card p-8 md:p-12 rounded-[3rem] space-y-6 text-left">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <input type="text" placeholder="Name" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-[#4BBD99] outline-none">
-                    <input type="email" placeholder="Email" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-[#4BBD99] outline-none">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Let's Connect</h2>
+                <p class="text-gray-400 text-sm">Have a project in mind? Reach out and let's create something amazing together.</p>
+            </div>
+            <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6 text-left !block">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="Full Name" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#4BBD99] transition text-white">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#4BBD99] transition text-white">
                 </div>
-                <textarea rows="4" placeholder="Message" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:border-[#4BBD99] outline-none"></textarea>
-                <button class="w-full py-4 rounded-2xl font-bold text-lg transition shadow-xl" 
+                <input type="text" placeholder="Subject" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#4BBD99] transition text-white mb-6">
+                <textarea rows="5" placeholder="Your Message" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#4BBD99] transition text-white mb-6"></textarea>
+                <button class="w-full py-5 rounded-2xl font-bold text-lg transition shadow-xl shadow-emerald-900/40" 
                         style="background-color: var(--accent-mint); color: #161529;">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-gray-500 text-sm">&copy; 2026 Arnob Biswas. All Rights Reserved.</p>
+    <footer class="py-16 bg-[#14324C] text-white">
+        <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col items-center">
+            <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8" style="filter: brightness(0) invert(1);">
+            
+            <div class="flex justify-center space-x-8 mb-10 text-white">
+                <a href="#" class="hover:text-[#4BBD99] text-2xl transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-[#4BBD99] text-2xl transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-[#4BBD99] text-2xl transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-[#4BBD99] text-2xl transition"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-[#4BBD99] text-2xl transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="text-white/70 text-sm text-center font-bold">
+                &copy; 2026 Arnob Biswas. All Rights Reserved.
+            </p>
+        </div>
     </footer>
 
     <script>
