@@ -10,10 +10,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         
         :root {
-            --bg-deep: #1a252f;
-            --muted-gold: #9a916c;
-            --accent-yellow: #fbc02d;
-            --text-light: #f1f5f4;
+            --bg-deep: #000000;          /* Pure Black for Cinematic Feel */
+            --bg-section: #121212;       /* Charcoal for section contrast */
+            --muted-gold: #9a916c;       /* Secondary details */
+            --accent-yellow: #fbc02d;    /* Primary Action Color */
+            --text-light: #f1f5f4;       /* Main Readable Text */
         }
 
         body { 
@@ -40,7 +41,7 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(154, 145, 108, 0.2);
+            border: 1px solid rgba(154, 145, 108, 0.15);
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
@@ -59,7 +60,7 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 bg-[#0d141b]/30 backdrop-blur-md border-b border-[#9a916c]/10">
+    <nav class="fixed w-full z-50 bg-black/60 backdrop-blur-md border-b border-white/5">
         <div class="max-w-6xl mx-auto px-8 md:px-12 py-4 flex justify-center md:justify-between items-center">
             <a href="#home">
                 <img src="logo.png" alt="Arnob Biswas" class="nav-logo">
@@ -102,7 +103,7 @@
         </div>
     </section>
 
-    <section class="py-24 bg-[#0d141b]/30">
+    <section class="py-24 bg-[#121212]">
         <div class="max-w-6xl mx-auto px-8 md:px-12">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">My Expertise</h2>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 text-center expertise-grid">
@@ -145,7 +146,7 @@
         </div>
     </section>
 
-    <section id="portfolio" class="py-24 bg-[#0d141b]/30">
+    <section id="portfolio" class="py-24 bg-[#121212]">
         <div class="max-w-6xl mx-auto px-8 md:px-12">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-2">Recent Projects</h2>
@@ -154,7 +155,7 @@
             
             <div class="grid md:grid-cols-2 gap-12 lg:gap-16">
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
+                    <div class="aspect-video bg-white/5 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center" style="background-color: rgba(251, 192, 45, 0.2);">
                             <i class="fas fa-play-circle text-6xl text-white"></i>
@@ -165,7 +166,7 @@
                 </div>
                 
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
+                    <div class="aspect-video bg-white/5 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Social Media</p>
@@ -173,7 +174,7 @@
                 </div>
 
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
+                    <div class="aspect-video bg-white/5 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Commercial</p>
@@ -181,7 +182,7 @@
                 </div>
 
                 <div class="group cursor-pointer">
-                    <div class="aspect-video bg-gray-800 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
+                    <div class="aspect-video bg-white/5 rounded-3xl overflow-hidden glass-card mb-6 relative !block border-0">
                         <img src="https://via.placeholder.com/640x360" alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     </div>
                     <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color: var(--muted-gold);">Personal Brand</p>
@@ -199,18 +200,18 @@
             </div>
             <form class="glass-card p-10 md:p-12 rounded-[3rem] space-y-6 text-left !block">
                 <div class="grid md:grid-cols-2 gap-6 mb-6">
-                    <input type="text" placeholder="Full Name" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition">
-                    <input type="email" placeholder="Email Address" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition">
+                    <input type="text" placeholder="Full Name" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition">
                 </div>
-                <input type="text" placeholder="Subject" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition mb-6">
-                <textarea rows="5" placeholder="Your Message" class="w-full bg-slate-800/50 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition mb-6"></textarea>
+                <input type="text" placeholder="Subject" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition mb-6">
+                <textarea rows="5" placeholder="Your Message" class="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-[#fbc02d] transition mb-6"></textarea>
                 <button class="w-full py-5 rounded-2xl font-bold text-lg transition shadow-xl shadow-yellow-500/10" 
                         style="background-color: var(--accent-yellow); color: #000;">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-16 bg-[#0d141b]/30 border-t border-white/10">
+    <footer class="py-16 bg-black border-t border-white/10">
         <div class="max-w-6xl mx-auto px-8 md:px-12 flex flex-col items-center">
             <img src="logo.png" alt="Arnob Biswas" class="footer-logo mb-8">
             
